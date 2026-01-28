@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LovedToday - Privacy Policy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #FEFBF8 0%, #FFF9F5 100%);
+            min-height: 100vh;
+            color: #2D2D2D;
+            line-height: 1.6;
+        }
+
+        /* Background blobs */
+        .bg-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+        }
+
+        .blob-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 107, 107, 0.12);
+            top: -100px;
+            right: -50px;
+        }
+
+        .blob-2 {
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 180, 162, 0.15);
+            bottom: 100px;
+            left: -50px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .app-name {
+            font-size: 28px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* Language Switcher */
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .lang-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            color: #666;
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.1);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            color: white;
+            box-shadow: 0 4px 16px rgba(255, 107, 107, 0.3);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #FFF5F5;
+        }
+
+        /* Content Card */
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(255, 107, 107, 0.08);
+            margin-bottom: 24px;
+        }
+
+        .card h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #FF6B6B;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #FFF0F0;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2D2D2D;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .card ul {
+            color: #555;
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #FFF5F5, #FFF0EE);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            border-left: 3px solid #FF8E8E;
+        }
+
+        .highlight p {
+            margin: 0;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: #FF8E8E;
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .nav-links a {
+            color: #FF6B6B;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 107, 107, 0.08);
+        }
+
+        .nav-links a.active {
+            font-weight: 600;
+        }
+
+        /* Hide sections by default */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 16px;
+            }
+
+            .card {
+                padding: 28px 24px;
+                border-radius: 20px;
+            }
+
+            .logo {
+                font-size: 40px;
+            }
+
+            .app-name {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">❤️</div>
+            <h1 class="app-name">Loved Today</h1>
+            <p class="tagline" id="tagline">Private Intimacy Journal</p>
+        </header>
+
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('en')">English</button>
+            <button class="lang-btn" onclick="switchLang('zh-CN')">简体中文</button>
+            <button class="lang-btn" onclick="switchLang('zh-TW')">繁體中文</button>
+        </div>
+
+        <nav class="nav-links">
+            <a href="#privacy" class="active" onclick="showSection('privacy')">
+                <span class="en">Privacy Policy</span>
+                <span class="zh-CN" style="display:none;">隐私政策</span>
+                <span class="zh-TW" style="display:none;">隱私政策</span>
+            </a>
+            <a href="#terms" onclick="showSection('terms')">
+                <span class="en">Terms</span>
+                <span class="zh-CN" style="display:none;">服务条款</span>
+                <span class="zh-TW" style="display:none;">服務條款</span>
+            </a>
+            <a href="#support" onclick="showSection('support')">
+                <span class="en">Support</span>
+                <span class="zh-CN" style="display:none;">支持</span>
+                <span class="zh-TW" style="display:none;">支援</span>
+            </a>
+        </nav>
+
+        <!-- Privacy Policy - English -->
+        <div id="privacy" class="content-section active">
+            <div class="card en">
+                <h1>Privacy Policy</h1>
+                <p><em>Last updated: January 2026</em></p>
+
+                <h2>Our Commitment</h2>
+                <p>Loved Today is designed with privacy as its core principle. Your intimate life is personal, and we believe it should stay that way.</p>
+
+                <div class="highlight">
+                    <p><strong>In short:</strong> We don't collect, store, or have access to any of your data. Period.</p>
+                </div>
+
+                <h2>Data Storage</h2>
+                <p>All your data is stored:</p>
+                <ul>
+                    <li><strong>Locally on your device</strong> — Your check-in records are saved securely on your iPhone</li>
+                    <li><strong>In your personal iCloud</strong> — Data syncs securely across your own devices through your Apple ID, protected by Apple's end-to-end encryption</li>
+                </ul>
+                <p>We do not operate any servers. Your data stays exclusively within your Apple ecosystem — only you can access it.</p>
+
+                <h2>Apple Watch Support</h2>
+                <p>You can record intimate activity using the Apple Watch's built-in "Cycle Tracking" app. Loved Today automatically syncs these records via HealthKit integration, so all your data appears in the iOS app.</p>
+
+                <h2>Data We Don't Collect</h2>
+                <ul>
+                    <li>Personal information</li>
+                    <li>Usage analytics</li>
+                    <li>Device identifiers</li>
+                    <li>Location data</li>
+                    <li>Any form of tracking</li>
+                </ul>
+
+                <h2>Apple Health Integration</h2>
+                <p>If you choose to enable Health integration:</p>
+                <ul>
+                    <li>Data syncs directly between Loved Today and Apple Health on your device</li>
+                    <li>This sync happens entirely on your device</li>
+                    <li>We have no access to your Health data</li>
+                </ul>
+
+                <h2>Security</h2>
+                <ul>
+                    <li>Face ID / Touch ID protection prevents unauthorized access</li>
+                    <li>No widgets — your data never appears on your home screen</li>
+                    <li>No account required — nothing to hack</li>
+                </ul>
+
+                <h2>Third Parties</h2>
+                <p>We do not share data with third parties because we don't have your data to share.</p>
+
+                <h2>Children's Privacy</h2>
+                <p>Loved Today is intended for adults only (17+).</p>
+
+                <h2>Changes to This Policy</h2>
+                <p>If we update this policy, changes will be posted on this page.</p>
+
+                <h2>Contact</h2>
+                <p>Questions? Email us at <a href="mailto:0xease@gmail.com" style="color: #FF6B6B;">0xease@gmail.com</a></p>
+            </div>
+
+            <div class="card zh-CN" style="display:none;">
+                <h1>隐私政策</h1>
+                <p><em>最后更新：2026年1月</em></p>
+
+                <h2>我们的承诺</h2>
+                <p>爱了么以隐私为核心设计理念。你的私密生活是个人的，我们认为它应该保持这种状态。</p>
+
+                <div class="highlight">
+                    <p><strong>简单来说：</strong>我们不收集、不存储、也无法访问你的任何数据。</p>
+                </div>
+
+                <h2>数据存储</h2>
+                <p>你的所有数据存储在：</p>
+                <ul>
+                    <li><strong>本地设备</strong> — 记录安全地保存在你的 iPhone 上</li>
+                    <li><strong>你的个人 iCloud</strong> — 数据通过 Apple ID 在你的设备间安全同步，受 Apple 端到端加密保护</li>
+                </ul>
+                <p>我们不运营任何服务器。你的数据完全保留在你的 Apple 生态系统内，只有你能访问。</p>
+
+                <h2>Apple Watch 支持</h2>
+                <p>你可以使用 Apple Watch 内置的"经期跟踪" app 记录亲密活动。爱了么通过 HealthKit 整合自动同步这些记录，所有数据都会显示在 iOS app 中。</p>
+
+                <h2>我们不收集的数据</h2>
+                <ul>
+                    <li>个人信息</li>
+                    <li>使用分析</li>
+                    <li>设备标识符</li>
+                    <li>位置数据</li>
+                    <li>任何形式的追踪</li>
+                </ul>
+
+                <h2>Apple 健康整合</h2>
+                <p>如果你选择启用健康整合：</p>
+                <ul>
+                    <li>数据直接在你设备上的爱了么和 Apple 健康之间同步</li>
+                    <li>此同步完全在你的设备上进行</li>
+                    <li>我们无法访问你的健康数据</li>
+                </ul>
+
+                <h2>安全性</h2>
+                <ul>
+                    <li>面容 ID / 触控 ID 保护，防止未授权访问</li>
+                    <li>不提供小组件 — 你的数据永远不会出现在主屏幕</li>
+                    <li>无需账户 — 没有可被攻击的目标</li>
+                </ul>
+
+                <h2>第三方</h2>
+                <p>我们不与第三方共享数据，因为我们根本没有你的数据可以共享。</p>
+
+                <h2>儿童隐私</h2>
+                <p>爱了么仅供成人使用（17+）。</p>
+
+                <h2>政策变更</h2>
+                <p>如果我们更新此政策，变更将发布在此页面。</p>
+
+                <h2>联系我们</h2>
+                <p>有问题？请发送邮件至 <a href="mailto:0xease@gmail.com" style="color: #FF6B6B;">0xease@gmail.com</a></p>
+            </div>
+
+            <div class="card zh-TW" style="display:none;">
+                <h1>隱私政策</h1>
+                <p><em>最後更新：2026年1月</em></p>
+
+                <h2>我們的承諾</h2>
+                <p>愛了嗎以隱私為核心設計理念。您的私密生活是個人的，我們認為它應該保持這種狀態。</p>
+
+                <div class="highlight">
+                    <p><strong>簡單來說：</strong>我們不收集、不儲存、也無法存取您的任何資料。</p>
+                </div>
+
+                <h2>資料儲存</h2>
+                <p>您的所有資料儲存在：</p>
+                <ul>
+                    <li><strong>本機裝置</strong> — 記錄安全地保存在您的 iPhone 上</li>
+                    <li><strong>您的個人 iCloud</strong> — 資料透過 Apple ID 在您的裝置間安全同步，受 Apple 端對端加密保護</li>
+                </ul>
+                <p>我們不營運任何伺服器。您的資料完全保留在您的 Apple 生態系統內，只有您能存取。</p>
+
+                <h2>Apple Watch 支援</h2>
+                <p>您可以使用 Apple Watch 內建的「經期追蹤」App 記錄親密活動。愛了嗎透過 HealthKit 整合自動同步這些記錄，所有資料都會顯示在 iOS App 中。</p>
+
+                <h2>我們不收集的資料</h2>
+                <ul>
+                    <li>個人資訊</li>
+                    <li>使用分析</li>
+                    <li>裝置識別碼</li>
+                    <li>位置資料</li>
+                    <li>任何形式的追蹤</li>
+                </ul>
+
+                <h2>Apple 健康整合</h2>
+                <p>如果您選擇啟用健康整合：</p>
+                <ul>
+                    <li>資料直接在您裝置上的愛了嗎和 Apple 健康之間同步</li>
+                    <li>此同步完全在您的裝置上進行</li>
+                    <li>我們無法存取您的健康資料</li>
+                </ul>
+
+                <h2>安全性</h2>
+                <ul>
+                    <li>Face ID / Touch ID 保護，防止未授權存取</li>
+                    <li>不提供小工具 — 您的資料永遠不會出現在主畫面</li>
+                    <li>無需帳號 — 沒有可被攻擊的目標</li>
+                </ul>
+
+                <h2>第三方</h2>
+                <p>我們不與第三方分享資料，因為我們根本沒有您的資料可以分享。</p>
+
+                <h2>兒童隱私</h2>
+                <p>愛了嗎僅供成人使用（17+）。</p>
+
+                <h2>政策變更</h2>
+                <p>如果我們更新此政策，變更將發布在此頁面。</p>
+
+                <h2>聯絡我們</h2>
+                <p>有問題？請發送郵件至 <a href="mailto:0xease@gmail.com" style="color: #FF6B6B;">0xease@gmail.com</a></p>
+            </div>
+        </div>
+
+        <!-- Terms of Service -->
+        <div id="terms" class="content-section">
+            <div class="card en">
+                <h1>Terms of Service</h1>
+                <p><em>Last updated: January 2026</em></p>
+
+                <h2>Agreement</h2>
+                <p>By using Loved Today, you agree to these terms.</p>
+
+                <h2>Use of the App</h2>
+                <ul>
+                    <li>Loved Today is intended for personal use by adults (17+)</li>
+                    <li>You are responsible for maintaining the security of your device</li>
+                    <li>You may not use the app for any illegal purpose</li>
+                </ul>
+
+                <h2>Your Data</h2>
+                <p>You own your data. We don't have access to it, and we don't want it.</p>
+
+                <h2>Payment</h2>
+                <ul>
+                    <li>Loved Today is a one-time purchase</li>
+                    <li>No subscriptions or recurring fees</li>
+                    <li>Refunds are handled by Apple according to their policies</li>
+                </ul>
+
+                <h2>Disclaimer</h2>
+                <p>Loved Today is provided "as is" without warranties of any kind. We are not responsible for any data loss due to device failure, iCloud issues, or other circumstances beyond our control.</p>
+
+                <h2>Changes</h2>
+                <p>We may update these terms. Continued use of the app constitutes acceptance of any changes.</p>
+            </div>
+
+            <div class="card zh-CN" style="display:none;">
+                <h1>服务条款</h1>
+                <p><em>最后更新：2026年1月</em></p>
+
+                <h2>协议</h2>
+                <p>使用爱了么即表示你同意这些条款。</p>
+
+                <h2>应用使用</h2>
+                <ul>
+                    <li>爱了么仅供成人（17+）个人使用</li>
+                    <li>你有责任维护设备的安全</li>
+                    <li>你不得将应用用于任何非法目的</li>
+                </ul>
+
+                <h2>你的数据</h2>
+                <p>你的数据属于你。我们无法访问它，也不想要它。</p>
+
+                <h2>付款</h2>
+                <ul>
+                    <li>爱了么为一次性购买</li>
+                    <li>无订阅或重复收费</li>
+                    <li>退款由 Apple 根据其政策处理</li>
+                </ul>
+
+                <h2>免责声明</h2>
+                <p>爱了么按"现状"提供，不提供任何形式的保证。我们不对因设备故障、iCloud 问题或其他超出我们控制范围的情况造成的数据丢失负责。</p>
+
+                <h2>变更</h2>
+                <p>我们可能会更新这些条款。继续使用应用即表示接受任何变更。</p>
+            </div>
+
+            <div class="card zh-TW" style="display:none;">
+                <h1>服務條款</h1>
+                <p><em>最後更新：2026年1月</em></p>
+
+                <h2>協議</h2>
+                <p>使用愛了嗎即表示您同意這些條款。</p>
+
+                <h2>應用程式使用</h2>
+                <ul>
+                    <li>愛了嗎僅供成人（17+）個人使用</li>
+                    <li>您有責任維護裝置的安全</li>
+                    <li>您不得將應用程式用於任何非法目的</li>
+                </ul>
+
+                <h2>您的資料</h2>
+                <p>您的資料屬於您。我們無法存取它，也不想要它。</p>
+
+                <h2>付款</h2>
+                <ul>
+                    <li>愛了嗎為一次性購買</li>
+                    <li>無訂閱或重複收費</li>
+                    <li>退款由 Apple 根據其政策處理</li>
+                </ul>
+
+                <h2>免責聲明</h2>
+                <p>愛了嗎按「現狀」提供，不提供任何形式的保證。我們不對因裝置故障、iCloud 問題或其他超出我們控制範圍的情況造成的資料遺失負責。</p>
+
+                <h2>變更</h2>
+                <p>我們可能會更新這些條款。繼續使用應用程式即表示接受任何變更。</p>
+            </div>
+        </div>
+
+        <!-- Support -->
+        <div id="support" class="content-section">
+            <div class="card en">
+                <h1>Support</h1>
+
+                <h2>Contact Us</h2>
+                <p>For questions, feedback, or issues:</p>
+                <p><a href="mailto:0xease@gmail.com" style="color: #FF6B6B; font-weight: 500;">0xease@gmail.com</a></p>
+
+                <h2>FAQ</h2>
+
+                <h2>How do I back up my data?</h2>
+                <p>Your data is automatically backed up through iCloud if enabled on your device. We recommend keeping iCloud backup enabled for your device.</p>
+
+                <h2>Can my partner see my data?</h2>
+                <p>No. Your data is tied to your Apple ID and can only be accessed on devices signed into your account.</p>
+
+                <h2>I forgot to check in yesterday. Can I add it?</h2>
+                <p>Yes! You can add records for past dates through the calendar view. Simply tap on any date in the calendar to add or remove records.</p>
+
+                <h2>Is my data really private?</h2>
+                <p>Yes. We have no servers, no accounts, no analytics. Your data exists only on your devices and in your personal iCloud storage.</p>
+            </div>
+
+            <div class="card zh-CN" style="display:none;">
+                <h1>支持</h1>
+
+                <h2>联系我们</h2>
+                <p>如有问题、反馈或需要帮助：</p>
+                <p><a href="mailto:0xease@gmail.com" style="color: #FF6B6B; font-weight: 500;">0xease@gmail.com</a></p>
+
+                <h2>常见问题</h2>
+
+                <h2>如何备份我的数据？</h2>
+                <p>如果你的设备启用了 iCloud，你的数据会自动备份。我们建议保持设备的 iCloud 备份开启。</p>
+
+                <h2>我的伴侣能看到我的数据吗？</h2>
+                <p>不能。你的数据与你的 Apple ID 绑定，只能在登录你账户的设备上访问。</p>
+
+                <h2>我忘了昨天记录，可以补上吗？</h2>
+                <p>可以！你可以通过日历视图为过去的日期添加记录。只需在日历中点击任何日期即可添加或删除记录。</p>
+
+                <h2>我的数据真的是私密的吗？</h2>
+                <p>是的。我们没有服务器，没有账户系统，没有数据分析。你的数据仅存在于你的设备和你个人的 iCloud 存储中。</p>
+            </div>
+
+            <div class="card zh-TW" style="display:none;">
+                <h1>支援</h1>
+
+                <h2>聯絡我們</h2>
+                <p>如有問題、回饋或需要協助：</p>
+                <p><a href="mailto:0xease@gmail.com" style="color: #FF6B6B; font-weight: 500;">0xease@gmail.com</a></p>
+
+                <h2>常見問題</h2>
+
+                <h2>如何備份我的資料？</h2>
+                <p>如果您的裝置啟用了 iCloud，您的資料會自動備份。我們建議保持裝置的 iCloud 備份開啟。</p>
+
+                <h2>我的伴侶能看到我的資料嗎？</h2>
+                <p>不能。您的資料與您的 Apple ID 綁定，只能在登入您帳號的裝置上存取。</p>
+
+                <h2>我忘了昨天記錄，可以補上嗎？</h2>
+                <p>可以！您可以透過日曆檢視為過去的日期新增記錄。只需在日曆中點擊任何日期即可新增或刪除記錄。</p>
+
+                <h2>我的資料真的是私密的嗎？</h2>
+                <p>是的。我們沒有伺服器，沒有帳號系統，沒有資料分析。您的資料僅存在於您的裝置和您個人的 iCloud 儲存空間中。</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Made with ❤️ for your privacy</p>
+            <p style="margin-top: 8px;">© 2026 Loved Today</p>
+        </footer>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content - hide all language versions first
+            document.querySelectorAll('.en').forEach(el => {
+                el.style.display = lang === 'en' ? 'block' : 'none';
+            });
+            document.querySelectorAll('.zh-CN').forEach(el => {
+                el.style.display = lang === 'zh-CN' ? 'block' : 'none';
+            });
+            document.querySelectorAll('.zh-TW').forEach(el => {
+                el.style.display = lang === 'zh-TW' ? 'block' : 'none';
+            });
+
+            // Update tagline
+            const taglines = {
+                'en': 'Private Intimacy Journal',
+                'zh-CN': '私密亲密记录',
+                'zh-TW': '私密親密記錄'
+            };
+            document.getElementById('tagline').textContent = taglines[lang];
+
+            // Update nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.querySelector('.en').style.display = lang === 'en' ? 'inline' : 'none';
+                link.querySelector('.zh-CN').style.display = lang === 'zh-CN' ? 'inline' : 'none';
+                link.querySelector('.zh-TW').style.display = lang === 'zh-TW' ? 'inline' : 'none';
+            });
+        }
+
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            // Show selected section
+            document.getElementById(section).classList.add('active');
+
+            // Update nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.closest('a').classList.add('active');
+        }
+
+        // Auto-detect language
+        (function() {
+            const userLang = navigator.language;
+            if (userLang === 'zh-TW' || userLang === 'zh-Hant' || userLang === 'zh-HK' || userLang === 'zh-MO') {
+                // Traditional Chinese regions
+                document.querySelector('.lang-btn:nth-child(3)').click();
+            } else if (userLang.startsWith('zh')) {
+                // Simplified Chinese (zh-CN, zh-Hans, etc.)
+                document.querySelector('.lang-btn:nth-child(2)').click();
+            }
+        })();
+    </script>
+</body>
+</html>
